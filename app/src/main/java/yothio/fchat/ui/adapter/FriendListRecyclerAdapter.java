@@ -43,7 +43,7 @@ public class FriendListRecyclerAdapter extends RecyclerView.Adapter<FriendListRe
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        holder.textView.setText("test:" + position);
+//        holder.textView.setText("test:" + position);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class FriendListRecyclerAdapter extends RecyclerView.Adapter<FriendListRe
         public RecyclerViewHolder(View itemView) {
             super(itemView);
 
-            textView = (TextView)itemView.findViewById(R.id.textView);
+//            textView = (TextView)itemView.findViewById(R.id.textView);
         }
     }
 }

@@ -13,22 +13,21 @@ import android.widget.TextView;
 import java.util.List;
 
 import yothio.fchat.R;
-import yothio.fchat.ui.activity.TalkActivity;
-import yothio.fchat.ui.adapter.model.Room;
+import yothio.fchat.ui.adapter.model.Talk;
 
 /**
  * Created by yocchi on 2017/11/06.
  */
 
-public class RoomListRecyclerAdapter extends RecyclerView.Adapter<RoomListRecyclerAdapter.RecyclerViewHolder> {
+public class TalkContentRecyclerAdapter extends RecyclerView.Adapter<TalkContentRecyclerAdapter.RecyclerViewHolder> {
 
-    List<Room> list;
+    List<Talk> list;
     LayoutInflater layoutInflater;
     Context context;
     FragmentManager fm;
     CoordinatorLayout root;
 
-    public RoomListRecyclerAdapter(Context c, List<Room> list, FragmentManager fm, CoordinatorLayout root) {
+    public TalkContentRecyclerAdapter(Context c, List<Talk> list, FragmentManager fm, CoordinatorLayout root) {
         layoutInflater = LayoutInflater.from(c);
         this.list = list;
         context = c;
@@ -39,22 +38,13 @@ public class RoomListRecyclerAdapter extends RecyclerView.Adapter<RoomListRecycl
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.list_room_item, parent, false);
-        RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
+       RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
-        holder.roomNameText.setText("test:" + position);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, TalkActivity.class);
-                context.startActivity(intent);
-            }
-        });
     }
 
     @Override

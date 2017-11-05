@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         MenuFragmentPagerAdapter pagerAdapter = new MenuFragmentPagerAdapter(getSupportFragmentManager());
+
+        tabLayout.setupWithViewPager(viewPager);
 
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new FriendListFragment());

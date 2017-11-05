@@ -14,7 +14,7 @@ import yothio.fchat.ui.fragment.FriendListFragment;
  */
 
 public class MenuFragmentPagerAdapter extends FragmentPagerAdapter {
-//    メニューの画面を保持
+    //    メニューの画面を保持
     private List<Fragment> fragmentList;
 
 
@@ -22,14 +22,27 @@ public class MenuFragmentPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         fragmentList = new ArrayList<>();
     }
-//    呼び出し元からフラグメントのリストの受取
-    public void serFragmentList(List<Fragment> fragmentList){
+
+    //    呼び出し元からフラグメントのリストの受取
+    public void serFragmentList(List<Fragment> fragmentList) {
         this.fragmentList = fragmentList;
     }
 
     @Override
     public Fragment getItem(int position) {
         return fragmentList.get(position);
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position) {
+            case 0:
+                return "友達";
+            case 1:
+                return "部屋";
+            default:
+                return "default";
+        }
     }
 
     @Override

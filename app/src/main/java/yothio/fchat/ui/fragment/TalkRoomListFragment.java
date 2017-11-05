@@ -39,7 +39,11 @@ public class TalkRoomListFragment extends BaseFragment {
 //        レイアウトとの結びつけ
         recyclerView = v.findViewById(R.id.friend_list_recyclerview);
 
+        Room room = new Room();
+
         list = new ArrayList<>();
+
+        list.add(room);
 
 //        アダプターに配列を渡す
         adapter = new RoomListRecyclerAdapter(getContext(),list, getFragmentManager(),root );
