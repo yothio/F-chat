@@ -12,21 +12,22 @@ import android.widget.TextView;
 import java.util.List;
 
 import yothio.fchat.R;
+import yothio.fchat.ui.adapter.model.Room;
 import yothio.fchat.ui.adapter.model.User;
 
 /**
- * Created by yoshiki on 2017/11/05.
+ * Created by yocchi on 2017/11/06.
  */
 
-public class FriendListRecyclerAdapter extends RecyclerView.Adapter<FriendListRecyclerAdapter.RecyclerViewHolder> {
+public class RoomListRecyclerAdapter extends RecyclerView.Adapter<RoomListRecyclerAdapter.RecyclerViewHolder> {
 
-    List<User> list;
+    List<Room> list;
     LayoutInflater layoutInflater;
     Context context;
     FragmentManager fm;
     CoordinatorLayout root;
 
-    public FriendListRecyclerAdapter(Context c, List<User> list, FragmentManager fm, CoordinatorLayout root) {
+    public RoomListRecyclerAdapter(Context c, List<Room> list, FragmentManager fm, CoordinatorLayout root) {
         layoutInflater = LayoutInflater.from(c);
         this.list = list;
         context = c;
@@ -36,7 +37,7 @@ public class FriendListRecyclerAdapter extends RecyclerView.Adapter<FriendListRe
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.list_friend_item,parent,false);
+        View view = layoutInflater.inflate(R.layout.list_room_item, parent, false);
         RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
         return viewHolder;
     }
@@ -53,10 +54,10 @@ public class FriendListRecyclerAdapter extends RecyclerView.Adapter<FriendListRe
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+
         public RecyclerViewHolder(View itemView) {
             super(itemView);
 
-            textView = (TextView)itemView.findViewById(R.id.textView);
         }
     }
 }

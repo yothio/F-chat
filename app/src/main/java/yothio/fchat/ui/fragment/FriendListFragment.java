@@ -14,7 +14,7 @@ import java.util.List;
 
 import yothio.fchat.R;
 import yothio.fchat.ui.adapter.FriendListRecyclerAdapter;
-import yothio.fchat.ui.adapter.model.Friend;
+import yothio.fchat.ui.adapter.model.User;
 
 /**
  * Created by yoshiki on 2017/11/04.
@@ -25,7 +25,7 @@ public class FriendListFragment extends BaseFragment {
     private RecyclerView.Adapter adapter;
 
     private CoordinatorLayout root;
-    private List<Friend> list;
+    private List<User> list;
     RecyclerView recyclerView;
 
     @Nullable
@@ -40,6 +40,11 @@ public class FriendListFragment extends BaseFragment {
         recyclerView = v.findViewById(R.id.friend_list_recyclerview);
 
         list = new ArrayList<>();
+        User user = new User();
+        user.setImagePath("test");
+        user.setName("テストさん");
+        user.setUserId(123);
+        list.add(user);
 
 //        アダプターに配列を渡す
         adapter = new FriendListRecyclerAdapter(getContext(),list, getFragmentManager(),root );
